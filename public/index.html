@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Система управления гостиницей</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Система управления гостиницей</h1>
+
+    <section class="card">
+      <h2>Статистика</h2>
+      <div class="stats-grid">
+        <div>Общая выручка: <strong id="totalRevenue">0</strong></div>
+        <div>Количество номеров: <strong id="totalRooms">0</strong></div>
+        <div>Свободные номера: <strong id="availableRooms">0</strong></div>
+        <div>Занятые номера: <strong id="occupiedRooms">0</strong></div>
+        <div>Номера на обслуживании: <strong id="maintenanceRooms">0</strong></div>
+      </div>
+    </section>
+
+    <section class="card"><h2>Номера</h2><table id="roomsTable"><thead><tr><th>Номер</th><th>Этаж</th><th>Статус</th><th>Тип</th><th>Цена за ночь</th></tr></thead><tbody></tbody></table></section>
+    <section class="card"><h2>Гости</h2><table id="guestsTable"><thead><tr><th>ФИО</th><th>Телефон</th><th>Email</th><th>Паспорт</th></tr></thead><tbody></tbody></table></section>
+    <section class="card"><h2>Бронирования</h2><table id="bookingsTable"><thead><tr><th>Гость</th><th>Номер</th><th>Дата заезда</th><th>Дата выезда</th><th>Статус</th><th>Сумма</th></tr></thead><tbody></tbody></table></section>
+    <section class="card"><h2>Услуги</h2><table id="servicesTable"><thead><tr><th>Название</th><th>Описание</th><th>Цена</th></tr></thead><tbody></tbody></table></section>
+    <section class="card"><h2>Платежи</h2><table id="paymentsTable"><thead><tr><th>ID бронирования</th><th>Сумма</th><th>Способ оплаты</th><th>Дата</th><th>Статус</th></tr></thead><tbody></tbody></table></section>
+
+    <section class="card">
+      <h2>Форма добавления гостя</h2>
+      <form id="guestForm" class="form-grid">
+        <input name="first_name" placeholder="Имя" required />
+        <input name="last_name" placeholder="Фамилия" required />
+        <input name="phone" placeholder="Телефон" required />
+        <input name="email" placeholder="Email" />
+        <input name="passport_number" placeholder="Паспорт" required />
+        <button type="submit">Добавить гостя</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Форма добавления бронирования</h2>
+      <form id="bookingForm" class="form-grid">
+        <input name="guest_id" type="number" placeholder="guest_id" required />
+        <input name="room_id" type="number" placeholder="room_id" required />
+        <input name="employee_id" type="number" placeholder="employee_id" required />
+        <input name="check_in_date" type="date" required />
+        <input name="check_out_date" type="date" required />
+        <input name="status" placeholder="status" required />
+        <input name="total_price" type="number" step="0.01" placeholder="total_price" required />
+        <button type="submit">Добавить бронирование</button>
+      </form>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
